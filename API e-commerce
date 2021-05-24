@@ -1,0 +1,16 @@
+{
+    "filter": {
+        "status": [
+            "payment-pending",
+            "payment-approved",
+            "ready-for-handling",
+            "invoiced",
+            "replaced",
+            "canceled"
+        ]
+    },
+    "queue": {
+        "visibilityTimeoutInSeconds": 30,
+        "messageRetentionPeriodInSeconds": 1209600
+    }
+}
