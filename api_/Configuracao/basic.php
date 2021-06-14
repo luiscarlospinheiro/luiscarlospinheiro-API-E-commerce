@@ -24,16 +24,18 @@ class Basic{
     // banco e tabelas
     function createPedido(){
 		 $query = "CREATE TABLE IF NOT EXISTS `Pedido` (
-		  `id` int(11) NOT NULL AUTO_INCREMENT,
+		  `NumPedido` int(11) NOT NULL AUTO_INCREMENT,
 		  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-		  `value` decimal 10,2 NOT NULL,
-		  `product` varchar (10) NOT NULL,
-		  `total_value` decimal 10,2 NOT NULL,
-      `status` varchar (50) NOT NULL,
-      `Num_produto` int(11) not null,
+		  `valor` decimal 10,2 NOT NULL,
+		  `produtos` varchar (10) NOT NULL,
+		  `nome` varchar (10) NOT NULL,
+		  `endereço` varchar (10) NOT NULL,
+		  `valor_total` decimal 10,2 NOT NULL,
+                  `status` varchar (50) NOT NULL,
+                  `Num_produto` int(11) NOT NULL ,
       
-		  PRIMARY KEY (`id`)
-      FOREIGN KEY ('num_produto')
+		  PRIMARY KEY (`id`),
+                  FOREIGN KEY ('Num_produto')
 		) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;";
 
   
@@ -46,9 +48,9 @@ class Basic{
 	}
 	
 	function insertPedido(){
-		$query = "INSERT INTO `categories` (`id`,`created`, `value`, `product`, `name`, `address`, `total_value`, `status`) VALUES
+		$query = "INSERT INTO `categories` (`NumPedido`,`created`, `valor`, `produtos`, `nome`, `endereço`, `total_value`, `status`) VALUES
 			(1, '2021-05-19 16:30:07', '105,89', 'medicamentos', 'Carolina', 'Rua 1','105,89', 'payment-pending'  ),
-			(1, '2021-05-19 16:28:07', '143,02', 'medicamentos', 'Luciana', 'Rua 1','143,02', 'ready-for-handling'),
+			(2, '2021-05-19 16:28:07', '143,02', 'medicamentos', 'Luciana', 'Rua 1','143,02', 'ready-for-handling'),
 		
 
     
@@ -78,7 +80,7 @@ class Basic{
 	}
 	
 	function insertProdutos(){
-		$query = "INSERT INTO `produtos` (`id`, `stock`, `price`,  ) VALUES
+		$query = "INSERT INTO `Produtos` (`id`, `stock`, `price`,  ) VALUES
 			(1, 50, '50', 3),
 			(2,  100,'12', 2),
 			(3,  200, '0,35', 3),
@@ -149,7 +151,7 @@ class Basic{
 	}
 	
 	function insertLojista(){
-		$query = "INSERT INTO `lojista` (`name`, `id`, ) VALUES
+		$query = "INSERT INTO `Lojista` (`name`, `id`, ) VALUES
 			(venancio, 98),
 			(venancio,  98),
 			(venancio,  98),
