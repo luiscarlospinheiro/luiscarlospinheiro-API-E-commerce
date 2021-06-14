@@ -63,7 +63,7 @@ class Basic{
 	}
 	
 	function createProdutos(){
-		$query = "CREATE TABLE IF NOT EXISTS `produtos` (
+		$query = "CREATE TABLE IF NOT EXISTS `Produtos` (
 		  `id` int(11) NOT NULL AUTO_INCREMENT,
       `stock` int(11) NOT NULL,
 		  `price` decimal(10,0) NOT NULL,
