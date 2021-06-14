@@ -134,7 +134,7 @@ class Basic{
         }
 	
 	function createLojista(){
-		$query = "CREATE TABLE IF NOT EXISTS `lojista` (
+		$query = "CREATE TABLE IF NOT EXISTS `Lojista` (
 		 `name` varchar(50) NOT NULL,
       `id` int(11) NOT NULL,
 		  PRIMARY KEY (`id`)
