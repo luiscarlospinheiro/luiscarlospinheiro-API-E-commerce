@@ -48,7 +48,7 @@ class Basic{
 	function insertPedido(){
 		$query = "INSERT INTO `categories` (`id`,`created`, `value`, `product`, `name`, `address`, `total_value`, `status`) VALUES
 			(1, '2021-05-19 16:30:07', '105,89', 'medicamentos', 'Carolina', 'Rua 1','105,89', 'payment-pending'  ),
-			(1, '2021-05-19 16:28:07', '143,02', 'medicamentos', 'Luciana', 'Rua 1','143,02143,02', 'ready-for-handling'),
+			(1, '2021-05-19 16:28:07', '143,02', 'medicamentos', 'Luciana', 'Rua 1','143,02', 'ready-for-handling'),
 		
 
     
