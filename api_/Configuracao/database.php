@@ -1,6 +1,6 @@
-private $host = "venanciodb:3307";
-    public $db_name = "test";
-    private $username = "root";
+private $host = "drogariavenancio:3307";
+    public $db_name = "venancio";
+    private $username = "venancio";
     private $password = "xxxx";
     public $conn;
 
