@@ -4,7 +4,7 @@ private $host = "drogariavenancio:3307";
     private $password = "xxxx";
     public $conn;
 
-    // get the database connection
+ 
     public function getConnection(){
 
         $this->conn = null;
