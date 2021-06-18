@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 // url
 $home_url=""https://venanciov98.myvtex.com";
 
-// página fornecida no parâmetro de URL, a página padrão é um
+
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
 
