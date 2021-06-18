@@ -25,7 +25,7 @@ class Basic{
     function createPedido(){
 		 $query = "CREATE TABLE IF NOT EXISTS `Pedido` (
 		  `NumPedido` int(11) NOT NULL AUTO_INCREMENT,
-		  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+		  `criacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 		  `valor` decimal 10,2 NOT NULL,
 		  `produtos` varchar (10) NOT NULL,
 		  `nome` varchar (10) NOT NULL,
@@ -48,7 +48,7 @@ class Basic{
 	}
 	
 	function insertPedido(){
-		$query = "INSERT INTO `categories` (`NumPedido`,`created`, `valor`, `produtos`, `nome`, `endereço`, `total_value`, `status`) VALUES
+		$query = "INSERT INTO `Pedido` (`NumPedido`,`criacao`, `valor`, `produtos`, `nome`, `endereço`, `total_value`, `status`) VALUES
 			(1, '2021-05-19 16:30:07', '105,89', 'medicamentos', 'Carolina', 'Rua 1','105,89', 'payment-pending'  ),
 			(2, '2021-05-19 16:28:07', '143,02', 'medicamentos', 'Luciana', 'Rua 1','143,02', 'ready-for-handling'),
 		
@@ -65,8 +65,8 @@ class Basic{
 	function createProdutos(){
 		$query = "CREATE TABLE IF NOT EXISTS `Produtos` (
 		  `id` int(11) NOT NULL AUTO_INCREMENT,
-      `stock` int(11) NOT NULL,
-		  `price` decimal(10,0) NOT NULL,
+                  `estoque` int(11) NOT NULL,
+		  `preco` decimal(10,0) NOT NULL,
 		  PRIMARY KEY (`id`)
 		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;";
 
@@ -80,7 +80,7 @@ class Basic{
 	}
 	
 	function insertProdutos(){
-		$query = "INSERT INTO `Produtos` (`id`, `stock`, `price`,  ) VALUES
+		$query = "INSERT INTO `Produtos` (`id`, `estoque`, `preco`,  ) VALUES
 			(1, 50, '50', 3),
 			(2,  100,'12', 2),
 			(3,  200, '0,35', 3),
@@ -98,11 +98,11 @@ class Basic{
     }
 	
 	function createCliente(){
-		$query = "CREATE TABLE IF NOT EXISTS `cliente` (
+		$query = "CREATE TABLE IF NOT EXISTS `Cliente` (
 		  `id` int(11) NOT NULL AUTO_INCREMENT,
       `stock` int(11) NOT NULL,
-		  `name` varchar(50) NOT NULL,
-                   `address` varchar (50) NOT NULL,
+		  `nome` varchar(50) NOT NULL,
+                   `endereco` varchar (50) NOT NULL,
 		  PRIMARY KEY (`name`)
                   
 		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;";
@@ -117,7 +117,7 @@ class Basic{
 	}
 	
 	function insertCliente(){
-		$query = "INSERT INTO `cliente` (`name`, `address`, ) VALUES
+		$query = "INSERT INTO `Cliente` (`nome`, `endereco`, ) VALUES
 			(Carolina, rua 1),
 			(Luciana,  rua 2),
 			(Maria,  rua 2),
@@ -135,8 +135,8 @@ class Basic{
 	
 	function createLojista(){
 		$query = "CREATE TABLE IF NOT EXISTS `Lojista` (
-		 `name` varchar(50) NOT NULL,
-      `id` int(11) NOT NULL,
+		 `nome` varchar(50) NOT NULL,
+                 `id` int(11) NOT NULL,
 		  PRIMARY KEY (`id`)
                   
 		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;";
@@ -151,7 +151,7 @@ class Basic{
 	}
 	
 	function insertLojista(){
-		$query = "INSERT INTO `Lojista` (`name`, `id`, ) VALUES
+		$query = "INSERT INTO `Lojista` (`nome`, `id`, ) VALUES
 			(venancio, 98),
 			(venancio,  98),
 			(venancio,  98),
@@ -169,7 +169,7 @@ class Basic{
     }
 	
 	function createItempedido(){
-		$query = "CREATE TABLE IF NOT EXISTS `Itempedido` (
+		$query = "CREATE TABLE IF NOT EXISTS `Item_Pedido` (
 		  `Num_produto` int(11) NOT NULL AUTO_INCREMENT,
                   `estoque` int (30),
                    `valor_produto decimal (10,0),
@@ -188,7 +188,7 @@ class Basic{
 	}
 	
 	function insertItempedido(){
-		$query = "INSERT INTO `Itempedido` (`Num_produto`, `estoque`, ) VALUES
+		$query = "INSERT INTO `Item_Pedido` (`Num_produto`, `estoque`, ) VALUES
 			(1, 299),
 			(2,  366),
 			(3,  551),
